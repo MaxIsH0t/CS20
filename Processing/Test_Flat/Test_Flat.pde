@@ -23,8 +23,9 @@ println("Start of Console");
 //printArray(fontList); //For listing all possible fonts to choose, then createFont
 titleFont = createFont ("Harrington", height); //Must also Tools / Create Font / Find Font / Do Not Press "OK"
 
-//GUI Rectangle Setup
-rect(width*1/4, height*0, titleWidth, titleHeight);
+  GUI_Setup();
+
+
 }
 
 void draw () {
