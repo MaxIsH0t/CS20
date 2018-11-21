@@ -4,8 +4,11 @@ String title;
 float titleWidth;
 float titleHeight;
 float titleFontDecrease;
+float testtitleHeight;
+float testWidth;
 
 String footer;
+String thirdtext;
 float footerFontHeight;
 
 void textSetup() {
@@ -14,6 +17,7 @@ void textSetup() {
   titleHeight = height*1/10;
   titleFontDecrease = 1;
   footer = "Mahmoud Saleh is at the bottom!";
+  thirdtext = "YAYAYAYAAY!";
 
   titleFont = createFont ("Test", height);
 }
