@@ -16,6 +16,7 @@ void setup()
   void mousePressed()
   {    
     QuitButtonPressed();
+    DrawXClicked();
   }
  
  
