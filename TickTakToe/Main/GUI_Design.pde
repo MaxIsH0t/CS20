@@ -1,16 +1,11 @@
-//Font
-PFont BoldFont;
-
 int ResetboxX = 167;
 int ResetboxY = 150;
 int ResetWidth = 166;
 int ResetHeight = 0;
 
-int ResetWidthTEST = 10;
-
 void GUI_Design()
 {
-    //Lines
+  //Lines
   line(width*1/3, 0, width*1/3, height*1/4); //1
   line(width*2/3, 0, width*2/3, height*1/4); //2
   line(0, height*1/4, width, height*1/4); //3
@@ -59,32 +54,5 @@ void GUI_Design()
   
   //RESET Button
   rect(ResetWidth, ResetHeight, ResetboxX, ResetboxY);
-    
-  //Fonts
-  BoldFont = createFont("Arial Bold", 18);
-  }
-
-  void GUI_DesignDraw() 
-  {
-    
-    //Colour for text
-    fill(0, 102, 153);
-    
-    //Font
-    textFont(BoldFont);
-
-    //Quit Button Text
-    text("QUIT", 395, 130);
-    
-    //EASY MODE Button Text
-    text("EASY MODE", 38, 30); 
-    
-    //MEDIUM MODE Button Text
-    text("MEDIUM MODE", 19, 80); 
-    
-    //MASTER MODE Button Text
-    text("MASTER MODE", 19, 130); 
-    
-    //RESET Button text
-    text("RESET GAME!", 190, 85); 
+  
   }

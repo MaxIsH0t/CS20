@@ -1,7 +1,7 @@
-int QuitRectX = 167;
-int QuitRectY = 150;
-int QuitRectWidth = 166;
-int QuitRectHeight = 10;
+int QuitRectX = 155;
+int QuitRectY = 40;
+int QuitRectWidth = 339;
+int QuitRectHeight = 105;
 
 void Quit_Button()
 {
@@ -10,8 +10,15 @@ void Quit_Button()
 
 void QuitButtonPressed()
 {
-  if (mouseX>QuitRectWidth && mouseX<QuitRectHeight && mouseY>QuitRectX && mouseY<QuitRectY) 
+  // check horizontal position
+  if (mouseX >= 330 && mouseX < 505) 
   {
-  exit();
+  // check vertical position
+  if (mouseY >= 100 && mouseY < 155) 
+  {
+      // close programm
+      exit();
+      println("Game has been shut down!");
+    }
   }
 }
