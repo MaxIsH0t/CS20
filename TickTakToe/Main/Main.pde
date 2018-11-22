@@ -17,6 +17,7 @@ void setup()
   {    
     QuitButtonPressed();
     DrawXClicked();
+    ResetButtonPressed();
   }
  
  
