@@ -6,11 +6,13 @@ void setup()
   GUI_Design();
   
   Quit_Button();
-}
+  }
   
   void draw()
   {
     DrawText();
+    println (mouseX +"," + mouseY);
+
   }
   
   void mousePressed()

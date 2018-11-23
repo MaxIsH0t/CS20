@@ -1,6 +1,10 @@
 //Font
 PFont BoldFont;
-PFont BoldFont2;DrawText()
+PFont BoldFont2;
+
+int score = 0;
+
+void DrawText()
 {
     //Fonts
     BoldFont = createFont("Arial Bold", 18);
@@ -28,11 +32,7 @@ PFont BoldFont2;DrawText()
     text("RESET GAME!", 190, 85); 
     
     //Player #1 Score text
-    text("Player #1: " score, 190pore5); 
-    
-    // Draw X's
-    //textFont(BoldFont2);
-    //text("X", 43, 268); // X 1 In Box #1
+    text("Player #1: " + score, 364, 30); 
 }
 
 void DrawXClicked()
