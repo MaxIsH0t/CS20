@@ -9,7 +9,7 @@ void setup()
   // Draw String
   textDraw(title, titleFont, height, #2C08FF, CENTER, CENTER, width*1/4, height*0, titleWidth, titleHeight); //Title
   textDraw(footer, titleFont, height, #2C08FF, CENTER, CENTER, width*1/4, (height*9/10)-1, titleWidth, titleHeight); //Footer
-  textDraw(footer, titleFont, height, #2C08FF, CENTER, CENTER, width*1/4, (height*9/10)-1, testWidth, testtitleHeight); //Footer
+  textDraw(thirdtext, titleFont, height, #2C08FF, CENTER, CENTER, width*1/4, (height*5/10)-1, testWidth, testtitleHeight); //Footer
 }
 
 void draw() 

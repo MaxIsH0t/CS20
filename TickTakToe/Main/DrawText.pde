@@ -33,6 +33,9 @@ void DrawText()
     
     //Player #1 Score text
     text("Player #1: " + score, 364, 30); 
+    
+    //Player #2 Score text
+    text("Player #2: " + score, 364, 80); 
 }
 
 void DrawXClicked()

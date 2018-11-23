@@ -17,7 +17,7 @@ void textSetup() {
   titleHeight = height*1/10;
   titleFontDecrease = 1;
   footer = "Mahmoud Saleh is at the bottom!";
-  thirdtext = "YAYAYAYAAY!";
+  thirdtext = "Mahmoud Saleh is at the bottomD";
 
   titleFont = createFont ("Test", height);
 }

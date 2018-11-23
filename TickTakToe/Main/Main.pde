@@ -11,8 +11,8 @@ void setup()
   void draw()
   {
     DrawText();
-    println (mouseX +"," + mouseY);
-
+    // Used for determianing the mouseX and mouseY
+    //println (mouseX +"," + mouseY);
   }
   
   void mousePressed()
