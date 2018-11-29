@@ -3,7 +3,7 @@ String[] trigger = new String[triggerPieces];
 
 void Trigger()
 {
-  if (boardPiece[1] != null && boardPiece[3] != null && boardPiece[4] != null && boardPiece[5] != null && boardPiece[7] != null)
+  if (boardPiece[1] != null || boardPiece[3] != null || boardPiece[4] != null && boardPiece[5] != null || boardPiece[7] != null)
   {
     if (boardPiece[1] != null)
     {

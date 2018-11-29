@@ -8,13 +8,13 @@ String[] onlyOPiece = new String[numberOfBoardPieces];
 void gamePieces()
 {
   boardPiece[0] = "X"; // First Corner, left
-  boardPiece[1] = "O"; // First Middle
+  boardPiece[1] = null; // First Middle
   boardPiece[2] = null; // First Corner, right
   boardPiece[3] = null; // Second Corner, left
   boardPiece[4] = "X"; // Second Middle
   boardPiece[5] = null; // Second Corner, right
   boardPiece[6] = null; // Third Corner, left
-  boardPiece[7] = "O"; // Third Middle
+  boardPiece[7] = null; // Third Middle
   boardPiece[8] = "X"; // Third Corner, right
   
   onlyX();
@@ -23,7 +23,7 @@ void gamePieces()
 
 void onlyX()
 {
-  for(int i=0; i<numberOfBoardPieces; i++)
+  for(int i=0; i < numberOfBoardPieces; i++)
   {
       if (boardPiece[i] == "X")
       {
@@ -38,7 +38,7 @@ void onlyO()
   {
       if (boardPiece[i] == "O")
       {
-      onlyXPiece[i] = "O";
+      onlyOPiece[i] = "O";
     }
   }
 }

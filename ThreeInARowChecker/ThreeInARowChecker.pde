@@ -4,13 +4,14 @@
 * NULL used to represent empty board space
 **/
 
-// Global Variables & Global Variables
+// Global Variables & Sub Program
 
 void setup()
 {
   //size(); // Not done, no visual data 
   gamePieces();
   Trigger();
+  check3InRow();
 }
 
 void draw() // Empty draw() loop without visual data
