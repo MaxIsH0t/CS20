@@ -17,7 +17,8 @@ void DrawText()
     textFont(BoldFont);
 
     //Quit Button Text
-    text("QUIT", 395, 130);
+    textDraw(quit, BoldFont, 30, 0, CENTER, CENTER, 395, 130, 15, 15);;    //text("QUIT", 395, 130);
+
     
     //EASY MODE Button Text
     text("EASY MODE", 38, 30); 
