@@ -1,9 +1,11 @@
-//Font
+  //Font
 PFont BoldFont;
 PFont BoldFont2;
 
 int scoreP1 = 0;
 int scoreP2 = 0;
+
+color bg;
 
 String title = "HELLO!";
 String easy = "EASY";
@@ -59,9 +61,9 @@ void DrawText()
     //Fonts
     BoldFont = createFont("Arial Bold", 18);
     BoldFont2 = createFont("Arial Bold", 120);
-    
+        
     //EASY MODE Button Text
-    textDraw(easy, BoldFont, 20, 0, 50, 50, 38, 30, 60, 50);
+    textDraw(easy, BoldFont, 20, 0, 50, 50, 38, 30, 60, 50); 
     
     //MEDIUM MODE Button Text
     textDraw(medium, BoldFont, 20, 0, 50, 50, 19, 80, 150, 50);
