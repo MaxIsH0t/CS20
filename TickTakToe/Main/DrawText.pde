@@ -4,8 +4,11 @@ PFont BoldFont2;
 
 int scoreP1 = 0;
 int scoreP2 = 0;
+int xWin = 0, oWin = 0, count = 0, position = 0;
 
+Boolean[] noDraw = new Boolean[9];
 color bg;
+color green = #00FF1F;
 
 String title = "HELLO!";
 String easy = "EASY";
@@ -15,6 +18,8 @@ String reset = "RESET";
 String quit = "QUIT";
 String player1 = "P1 Score: " + scoreP1;
 String player2 = "P2 Score: " + scoreP2;
+String x = "X";
+String o = "O";
 
 void textDraw(String string, PFont font, float height, color ink, int alignHorizontal, int alignVertical, float rectX, float rectY, float rectWidth, float rectHeight) 
 {
@@ -23,7 +28,6 @@ void textDraw(String string, PFont font, float height, color ink, int alignHoriz
   textAlign (alignHorizontal, alignVertical); 
   //Values: LEFT | CENTER | RIGHT & TOP | CENTER | BOTTOM | BASELINE
   
-  println( string.length() );
   if (string.length() >= 13) 
   {
     fontSize = textCalculator(height, string, rectWidth);
@@ -63,55 +67,134 @@ void DrawText()
     BoldFont2 = createFont("Arial Bold", 120);
         
     //EASY MODE Button Text
-    textDraw(easy, BoldFont, 20, 0, 50, 50, 38, 30, 60, 50); 
+    textDraw(easy, BoldFont, 20, 0, 50, 50, 55, 15, 60, 50); 
     
     //MEDIUM MODE Button Text
-    textDraw(medium, BoldFont, 20, 0, 50, 50, 19, 80, 150, 50);
+    textDraw(medium, BoldFont, 20, 0, 50, 50, 42, 65, 150, 50);
     
     //MASTER MODE Button Text
-    textDraw(master, BoldFont, 20, 0, 50, 50, 19, 130, 150, 50);
+    textDraw(master, BoldFont, 20, 0, 50, 50, 41, 115, 150, 50);
     
     //Quit Button Text
-    //textDraw(quit, BoldFont, 20, 0, 50, 50, 300, 120, 60, 50);
-    textDraw(quit, BoldFont, 20, 0, 50, 50, 364, 80, 150, 50);
-    
-    //RESET Button text
-    textDraw(reset, BoldFont, 20, 0, 50, 50, 190, 85, 150, 50);
+    fill(0);
+    text(quit, 390, 132);
+    textDraw(quit, BoldFont, 20, 0, 50, 50, 500, 120, 60, 50);
     
     //Player #1 Score text
-    textDraw(player1, BoldFont, 20, 0, 50, 50, 364, 30, 150, 50);
+    textDraw(player1, BoldFont, 20, 0, 50, 50, 364, 15, 150, 50);
     
     //Player #2 Score text
-    textDraw(player2, BoldFont, 20, 0, 50, 50, 364, 80, 150, 50);
+    textDraw(player2, BoldFont, 20, 0, 50, 50, 364, 65, 150, 50);
+    
+    //X&O in Board
+    if (count == 1 || count == 3 || count == 5 || count == 7 || count ==9)
+    {
+      xoText(x, position);
+    } else {
+      xoText(o, position);
+    }
+    
+    //Reset Button
+    if (count == 9)
+    {
+      fill(green);
+      rect(166, 0, 167, 150);
+      fill(255);
+      //resetText();
+      textDraw(reset, BoldFont, 40, 0, 50, 50, 185, 50, 150, 50);
+    }
 }
 
-void DrawXClicked()
+void xoText(String text, int position)
 {
-  // Draw X
-  if (mouseX >= 20 && mouseX < 145) 
-  {
-  // check vertical position
-  if (mouseY >= 170 && mouseY < 285) 
-  {
-    // Draw X's
-    textFont(BoldFont2);
-    text("X", 43, 268); // X 1 In Box #1
-      println("You clicked on X");
-      println("Next Player's turn!");
-    }
+  fill(0);
+  textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+  textFont(BoldFont, 80);
+  if (position == 1) {
+    text(text, width*1/24, height*7/24, width*6/24, height*4/24);
   }
-  
-  // Draw O
-  if (mouseX >= 183 && mouseX < 320) 
-  {
-  // check vertical position
-  if (mouseY >= 170 && mouseY < 285) 
-  {
-    // Draw X's
-    textFont(BoldFont2);
-    text("O", 203, 268); // X 1 In Box #1
-      println("You clicked on O");
-      println("Next Player's turn!");
-    }
+  if (position == 2) {
+    text(text, width*9/24, height*7/24, width*6/24, height*4/24);
   }
+  if (position == 3) {
+    text(text, width*17/24, height*7/24, width*6/24, height*4/24);
+  }
+  if (position == 4) {
+    text(text, width*1/24, height*13/24, width*6/24, height*4/24);
+  }
+  if (position == 5) {
+    text(text, width*9/24, height*13/24, width*6/24, height*4/24);
+  }
+  if (position == 6) {
+    text(text, width*17/24, height*13/24, width*6/24, height*4/24);
+  }
+  if (position == 7) {
+    text(text, width*1/24, height*19/24, width*6/24, height*4/24);
+  }
+  if (position == 8) {
+    text(text, width*9/24, height*19/24, width*6/24, height*4/24);
+  }
+  if (position == 9) {
+    text(text, width*17/24, height*19/24, width*6/24, height*4/24);
+  }
+  fill(255);
+}
+
+void xoButtonDraw() 
+{
+  if (noDraw[0] == false && mouseX>width*1/24 && mouseX<width*7/24 && mouseY>height*7/24 && mouseY<height*11/24) { //#1
+    position = 1;
+    noDraw[0] = true;
+    count++;
+  }
+  if (noDraw[1] == false && mouseX>width*9/24 && mouseX<width*15/24 && mouseY>height*7/24 && mouseY<height*11/24) { //#2
+    position = 2;
+    noDraw[1] = true;
+    count++;
+  } 
+  if (noDraw[2] == false && mouseX>width*17/24 && mouseX<width*23/24 && mouseY>height*7/24 && mouseY<height*11/24) { //#3
+    position = 3;
+    noDraw[2] = true;
+    count++;
+  } 
+  if (noDraw[3] == false && mouseX>width*1/24 && mouseX<width*7/24 && mouseY>height*13/24 && mouseY<height*17/24) { //#4
+    position = 4;
+    noDraw[3] = true;
+    count++;
+  } 
+  if (noDraw[4] == false && mouseX>width*9/24 && mouseX<width*15/24 && mouseY>height*13/24 && mouseY<height*17/24) { //#5
+    position = 5;
+    noDraw[4] = true;
+    count++;
+  } 
+  if (noDraw[5] == false && mouseX>width*17/24 && mouseX<width*23/24 && mouseY>height*13/24 && mouseY<height*17/24) { //#6
+    position = 6;
+    noDraw[5] = true;
+    count++;
+  } 
+  if (noDraw[6] == false && mouseX>width*1/24 && mouseX<width*7/24 && mouseY>height*19/24 && mouseY<height*23/24) { //#7
+    position = 7;
+    noDraw[6] = true;
+    count++;
+  } 
+  if (noDraw[7] == false && mouseX>width*9/24 && mouseX<width*15/24 && mouseY>height*19/24 && mouseY<height*23/24) { //#8
+    position = 8;
+    noDraw[7] = true;
+    count++;
+  } 
+  if (noDraw[8] == false && mouseX>width*17/24 && mouseX<width*23/24 && mouseY>height*19/24 && mouseY<height*23/24) { //#9
+    position = 9;
+    noDraw[8] = true;
+    count++;
+  }
+}
+
+void resetText()
+{
+  fill(0);
+  textAlign (CENTER, CENTER); 
+  textFont(BoldFont, 42);
+  text(reset, width*2/3, height*0/12, width*1/3, height*1/12);
+  fill(255);
 }
