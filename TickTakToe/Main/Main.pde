@@ -1,5 +1,4 @@
 // Global Variables
-
 void setup()
 {
   size(500, 600);
@@ -8,6 +7,9 @@ void setup()
   GUI_Design();  
   
   Quit_Button();
+  
+  check3InRow();
+
   
   for(int i=0; i < noDraw.length; i++)
   {

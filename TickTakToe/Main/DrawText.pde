@@ -1,4 +1,3 @@
-  //Font
 PFont BoldFont;
 PFont BoldFont2;
 
@@ -7,6 +6,9 @@ int scoreP2 = 0;
 int xWin = 0, oWin = 0, count = 0, position = 0;
 
 Boolean[] noDraw = new Boolean[9];
+int numberOfBoardPieces = 9;
+String[] onlyXPiece = new String[numberOfBoardPieces];
+String[] onlyOPiece = new String[numberOfBoardPieces];
 color bg;
 color green = #00FF1F;
 
@@ -111,31 +113,41 @@ void xoText(String text, int position)
   textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
   textFont(BoldFont, 80);
-  if (position == 1) {
+  
+  if (position == 1) 
+  {
     text(text, width*1/24, height*7/24, width*6/24, height*4/24);
   }
-  if (position == 2) {
+  if (position == 2) 
+  {
     text(text, width*9/24, height*7/24, width*6/24, height*4/24);
   }
-  if (position == 3) {
+  if (position == 3) 
+  {
     text(text, width*17/24, height*7/24, width*6/24, height*4/24);
   }
-  if (position == 4) {
+  if (position == 4) 
+  {
     text(text, width*1/24, height*13/24, width*6/24, height*4/24);
   }
-  if (position == 5) {
+  if (position == 5) 
+  {
     text(text, width*9/24, height*13/24, width*6/24, height*4/24);
   }
-  if (position == 6) {
+  if (position == 6) 
+  {
     text(text, width*17/24, height*13/24, width*6/24, height*4/24);
   }
-  if (position == 7) {
+  if (position == 7) 
+  {
     text(text, width*1/24, height*19/24, width*6/24, height*4/24);
   }
-  if (position == 8) {
+  if (position == 8) 
+  {
     text(text, width*9/24, height*19/24, width*6/24, height*4/24);
   }
-  if (position == 9) {
+  if (position == 9) 
+  {
     text(text, width*17/24, height*19/24, width*6/24, height*4/24);
   }
   fill(255);
@@ -143,47 +155,56 @@ void xoText(String text, int position)
 
 void xoButtonDraw() 
 {
-  if (noDraw[0] == false && mouseX>width*1/24 && mouseX<width*7/24 && mouseY>height*7/24 && mouseY<height*11/24) { //#1
+  if (noDraw[0] == false && mouseX>width*1/24 && mouseX<width*7/24 && mouseY>height*7/24 && mouseY<height*11/24) 
+  { //#1
     position = 1;
     noDraw[0] = true;
     count++;
   }
-  if (noDraw[1] == false && mouseX>width*9/24 && mouseX<width*15/24 && mouseY>height*7/24 && mouseY<height*11/24) { //#2
+  if (noDraw[1] == false && mouseX>width*9/24 && mouseX<width*15/24 && mouseY>height*7/24 && mouseY<height*11/24) 
+  { //#2
     position = 2;
     noDraw[1] = true;
     count++;
   } 
-  if (noDraw[2] == false && mouseX>width*17/24 && mouseX<width*23/24 && mouseY>height*7/24 && mouseY<height*11/24) { //#3
+  if (noDraw[2] == false && mouseX>width*17/24 && mouseX<width*23/24 && mouseY>height*7/24 && mouseY<height*11/24) 
+  { //#3
     position = 3;
     noDraw[2] = true;
     count++;
   } 
-  if (noDraw[3] == false && mouseX>width*1/24 && mouseX<width*7/24 && mouseY>height*13/24 && mouseY<height*17/24) { //#4
+  if (noDraw[3] == false && mouseX>width*1/24 && mouseX<width*7/24 && mouseY>height*13/24 && mouseY<height*17/24) 
+  { //#4
     position = 4;
     noDraw[3] = true;
     count++;
   } 
-  if (noDraw[4] == false && mouseX>width*9/24 && mouseX<width*15/24 && mouseY>height*13/24 && mouseY<height*17/24) { //#5
+  if (noDraw[4] == false && mouseX>width*9/24 && mouseX<width*15/24 && mouseY>height*13/24 && mouseY<height*17/24) 
+  { //#5
     position = 5;
     noDraw[4] = true;
     count++;
   } 
-  if (noDraw[5] == false && mouseX>width*17/24 && mouseX<width*23/24 && mouseY>height*13/24 && mouseY<height*17/24) { //#6
+  if (noDraw[5] == false && mouseX>width*17/24 && mouseX<width*23/24 && mouseY>height*13/24 && mouseY<height*17/24) 
+  { //#6
     position = 6;
     noDraw[5] = true;
     count++;
   } 
-  if (noDraw[6] == false && mouseX>width*1/24 && mouseX<width*7/24 && mouseY>height*19/24 && mouseY<height*23/24) { //#7
+  if (noDraw[6] == false && mouseX>width*1/24 && mouseX<width*7/24 && mouseY>height*19/24 && mouseY<height*23/24) 
+  { //#7
     position = 7;
     noDraw[6] = true;
     count++;
   } 
-  if (noDraw[7] == false && mouseX>width*9/24 && mouseX<width*15/24 && mouseY>height*19/24 && mouseY<height*23/24) { //#8
+  if (noDraw[7] == false && mouseX>width*9/24 && mouseX<width*15/24 && mouseY>height*19/24 && mouseY<height*23/24) 
+  { //#8
     position = 8;
     noDraw[7] = true;
     count++;
   } 
-  if (noDraw[8] == false && mouseX>width*17/24 && mouseX<width*23/24 && mouseY>height*19/24 && mouseY<height*23/24) { //#9
+  if (noDraw[8] == false && mouseX>width*17/24 && mouseX<width*23/24 && mouseY>height*19/24 && mouseY<height*23/24) 
+  { //#9
     position = 9;
     noDraw[8] = true;
     count++;

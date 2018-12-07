@@ -40,8 +40,6 @@ void GUI_Design()
   
   //This is used to make all the current rectangles below here and turn them yellow
   color purple = #D003FF, yellow = #FAFF03, boarder = purple, inside = yellow; // Quit Button
-  String quitButton = "Quit";
-  Boolean useCal = false;
   fill(inside);
   
   //EASY MODE Button
