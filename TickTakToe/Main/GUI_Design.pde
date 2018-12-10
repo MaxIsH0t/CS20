@@ -16,7 +16,6 @@ void GUI_Design()
   line(0, height*1/12, width*1/1, height*1/12);
   line(0, height*2/12, width*1/1, height*2/12);
   
-  
   //Square button clickers (on tick tac toe board)
   fill(153);
   rect(width*1/24, height*7/24, width*6/24, height*4/24); //1
@@ -36,7 +35,7 @@ void GUI_Design()
   rect(width*9/24, height*19/24, width*6/24, height*4/24);  //8
   fill(153);
   rect(width*17/24, height*19/24, width*6/24, height*4/24);  //9
-        rect(width*16.5, height*4.26/24, width*7.15/24, height*1.5/24);
+  rect(width*16.5, height*4.26/24, width*7.15/24, height*1.5/24);
   
   //This is used to make all the current rectangles below here and turn them yellow
   color purple = #D003FF, yellow = #FAFF03, boarder = purple, inside = yellow; // Quit Button

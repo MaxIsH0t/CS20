@@ -8,9 +8,6 @@ void setup()
   
   Quit_Button();
   
-  check3InRow();
-
-  
   for(int i=0; i < noDraw.length; i++)
   {
     noDraw[i] = false;
@@ -29,6 +26,8 @@ void setup()
     ResetButtonPressed();
     xoButtonDraw();
   }
+  
+  
  
  
  

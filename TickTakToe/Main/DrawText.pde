@@ -1,8 +1,6 @@
 PFont BoldFont;
 PFont BoldFont2;
 
-int scoreP1 = 0;
-int scoreP2 = 0;
 int xWin = 0, oWin = 0, count = 0, position = 0;
 
 Boolean[] noDraw = new Boolean[9];
@@ -18,8 +16,6 @@ String medium = "MEDIUM";
 String master = "MASTER";
 String reset = "RESET";
 String quit = "QUIT";
-String player1 = "P1 Score: " + scoreP1;
-String player2 = "P2 Score: " + scoreP2;
 String x = "X";
 String o = "O";
 
