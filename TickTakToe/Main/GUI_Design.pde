@@ -8,9 +8,9 @@ void GUI_Design()
   //Lines
   lineCreator(0, width*1/3, 0, width*1/3, height*1/4); // Lines for the board #1
   lineCreator(0, width*2/3, 0, width*2/3, height*1/4); // Lines for the board #2
-  line(height*1/4, width, height*1/4); // Lines for the board #3
-  lineCreator(0, height*1/2, width, height*1/2); // Lines for the board #4
-  lineCreator(0, height*3/4, width, height*3/4); // Lines for the board #5
+  line(0, height*1/4, width, height*1/4); // Lines for the board #3
+  line(0, height*1/2, width, height*1/2); // Lines for the board #4
+  line(0, height*3/4, width, height*3/4); // Lines for the board #5
   
   //Outlines for (on top of the board)
   line(0, height*1/12, width*1/1, height*1/12);
