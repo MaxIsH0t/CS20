@@ -88,10 +88,8 @@ void DrawText()
     if (count == 1 || count == 3 || count == 5 || count == 7 || count ==9)
     {
       xoText(x, position);
-      println("You have selected the X position.");
     } else {
       xoText(o, position);
-      println("You have selected the O position.");
     }
     
     //Reset Button
